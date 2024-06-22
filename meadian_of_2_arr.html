@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+     var val1 = [ 1, 13, 16, 30, 35 ];
+     var val2 = [ 2, 11, 17, 26, 40 ];
+
+
+//Print all out numbers of an array using ANONYMOUS FUNCTION:
+console.log("Using Anonymous Function");
+var f1 = function(arr1,arr2){
+var arr3 = arr1.concat(arr2);
+arr3.sort(function(a, b) {
+  return a - b;
+});
+var s = Math.floor(arr3.length/2);
+console.log((arr3[s]+arr3[s+1])/2);
+}
+
+f1(val1,val2);
+
+//Print all out numbers of an array using IIFE FUNCTION:
+console.log("Using IIFE Function");
+(function(arr1,arr2){
+var arr3 = arr1.concat(arr2);
+arr3.sort(function(a, b) {
+  return a - b;
+});
+var s = Math.floor(arr3.length/2);
+
+console.log((arr3[s]+arr3[s+1])/2);
+})(val1,val2)
+
+
+    </script>
+    
+</body>
+</html>

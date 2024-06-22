@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+function ispalindrome(s)
+{    let a = s;
+    s = s.split('');
+    s=s.reverse().join('');
+    return s == a;
+}
+
+
+//Print all out numbers of an array using ANONYMOUS FUNCTION:
+console.log("Using Anonymous Function");
+var PalindromicString1 = function(arr,l)
+{    let ans = [];
+    for (var i = 0; i < l; i++) {
+        if (ispalindrome(arr[i])) {
+            ans.push(arr[i]);
+        }
+    }
+    return ans;
+}
+var arr1 = [ "malayalam", "ada", "abcd", "hannah"];
+var n1 = arr1.length;
+console.log(PalindromicString1(arr1, n1));
+
+
+//Print all out numbers of an array using  IIFE FUNCTION:
+console.log("Using IIFE Function");
+let arr2 = [ "malayalam", "ada", "abcd", "hannah"];
+let n2 = arr2.length;
+(function(arr,l)
+{    let ans = [];
+    for (var i = 0; i < l; i++) {
+        if (ispalindrome(arr[i])) {
+            ans.push(arr[i]);
+        }
+    }
+    console.log(ans);
+})(arr2,n2);
+
+
+//Print all out numbers of an array using ARROW FUNCTION:
+console.log("Using ARROW Function");
+PalindromicString3 = (arr,l) =>
+{    let ans = [];
+    for (var i = 0; i < l; i++) {
+        if (ispalindrome(arr[i])) {
+            ans.push(arr[i]);
+        }
+    }
+    return ans;
+}
+var arr3 = [ "malayalam", "ada", "abcd", "hannah"];
+var n3 = arr3.length;
+console.log(PalindromicString3(arr3, n3));
+
+    </script>
+</body>
+</html>

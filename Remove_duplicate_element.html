@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    var val = [1,6,5,6,7,3,9,3,2,8];
+ //Print all out numbers of an array using ANONYMOUS FUNCTION:
+        console.log("Using Anonymous Function");
+        var remove = function(arr) {
+            var res = [];
+            for (i = 0; i < arr.length; i++) {
+                if (res.indexOf(arr[i]) === -1) {
+                    res.push(arr[i]);
+                }
+            }
+            return res;
+        }
+        console.log(remove(val));
+
+
+ //Print all out numbers of an array using IIFE FUNCTION:
+        console.log("Using IIFE Function");
+        (function(arr) {
+            var res = [];
+            for (i = 0; i < arr.length; i++) {
+                if (res.indexOf(arr[i]) === -1) {
+                    res.push(arr[i]);
+                }
+            }
+            console.log(res);
+        })(val)
+        
+</script>
+</body>
+</html>
